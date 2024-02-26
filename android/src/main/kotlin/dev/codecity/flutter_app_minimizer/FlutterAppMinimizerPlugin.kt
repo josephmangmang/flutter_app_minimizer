@@ -31,7 +31,7 @@ public class FlutterAppMinimizerPlugin(): FlutterPlugin, MethodCallHandler, Acti
 
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-    val channel = MethodChannel(flutterPluginBinding?.getFlutterEngine()?.getDartExecutor(), "flutter_app_minimizer")
+    val channel = MethodChannel(flutterPluginBinding.binaryMessenger, "flutter_app_minimizer")
     channel.setMethodCallHandler(this)
   }
 
